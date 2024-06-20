@@ -1,0 +1,20 @@
+#Sudah
+Ubah koneksi database ke MySQL
+●Tambah migration untuk membuat table Teachers dengan struktur:
+○Kolom id: INT, constraint 5, unsigned, auto_increment
+○Kolom name: VARCHAR, constraint 100
+○Kolom major: VARCHAR, constraint 100
+○Kolom created_at: TIMESTAMP
+○Kolom updated_at: TIMESTAMP
+○Primary Key: kolom id
+●Jalankan migration tersebut dan pastikan tabel sudah terbuat di MySQL
+●Buatkan models dari table Teachers dan terapkan validasi required pada field name
+●Setiap aksi create pada field name harus otomatis jadi format teacher-<nama>
+    ○/create/teacher => untuk menambah data Teachers dan jika name kosong harus dibuat gagal
+    ○/get/teacher => untuk mengambil seluruh data Teachers
+
+ 
+●Buatkan proses dalam routes untuk create dan read data Teachers dengan spesifikasi berikut :
+
+○/all-class-teacher => untuk mengambil seluruh data Teachers beserta keterangan Classes
+○/get-class-teacher/(:segment) => untuk mengambil data Teachers tertentu beserta keterangan Classes
